@@ -1,0 +1,211 @@
+@media (max-width: 768px) {
+  #sidebar {
+      flex-direction: row; /* Change to horizontal */
+      justify-content: space-around;
+      height: 50px; /* Adjust height */
+      width: 100%; /* Full width */
+  }
+
+  #main {
+      grid-template-columns: 1fr; /* Single-column layout */
+      height: calc(100vh - 50px); /* Adjust height */
+  }
+
+  #tabs {
+      overflow-x: auto; /* Allow horizontal scrolling for tabs */
+  }
+
+  .tab {
+      flex-shrink: 0;
+      padding: 5px 10px;
+  }
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: 'Consolas', monospace;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+  }
+  
+  /* IDE Container */
+  #ide-container {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: 50px 1fr;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* Sidebar */
+  #sidebar {
+    background-color: #252526;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #d4d4d4;
+  }
+  
+  .icon.active {
+    background-color: #007acc;
+    color: white;
+    border-radius: 5px;
+  }
+  .icon:hover {
+    background-color: #333; /* Subtle background change */
+    color: #ffffff;
+    border-radius: 5px; /* Match active icon's style */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+  }
+  
+  /* Main Content */
+  #main {
+    display: flex;
+    flex-direction: column;
+    height: 95%;
+  }
+  
+  #top-bar {
+    display: flex;
+    align-items: center; /* Ensures tabs are aligned properly */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+    background-color: #1e1e1e; /* Background color to match the design */
+    border-bottom: 1px solid #444; /* Optional: Add a divider below the top bar */
+    height: 40px; /* Adjust the height of the top bar */
+  }
+  
+  #top-bar input {
+    width: 100%;
+    padding: 8px;
+    background-color: #252526;
+    border: none;
+    color: white;
+    outline: none;
+  }
+  
+  /* Welcome Screen */
+  #welcome-screen {
+    background: url('background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #d4d4d4;
+    padding: 20px;
+  }
+  
+  #welcome-screen h1 {
+    font-size: 2rem;
+    color: #007acc;
+  }
+  
+  #welcome-screen p {
+    margin: 5px 0;
+  }
+  
+  #welcome-screen ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  #welcome-screen li {
+    margin: 5px 0;
+    cursor: pointer;
+  }
+  
+  #welcome-screen li:hover {
+    text-decoration: underline;
+  }
+  
+  /* Status Bar */
+  #status-bar {
+    background-color: #007acc;
+    color: white;
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    font-family: 'Consolas', monospace;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+}
+
+#status-bar span {
+    margin: 0 10px;
+    font-weight: bold;
+}
+  #welcome-screen {
+    position: relative;
+  }
+  
+  #welcome-screen::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+    
+  /* Tabs Bar */
+  #tabs {
+    display: flex;
+    align-items: center; /* Keep tabs aligned with the top bar */
+    margin: 0; /* Remove margin */
+    padding: 0; /* Remove padding */
+  }
+  
+  .tab {
+    padding: 10px 15px;
+    color: #d4d4d4;
+    font-size: 14px;
+    cursor: pointer;
+    border-right: 1px solid #444;
+    white-space: nowrap;
+  }
+  
+  .tab.active {
+    background-color: #007acc; /* Highlight active tab */
+    color: white;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.tab:hover {
+    background-color: #555; /* Lighter shade on hover */
+    color: #d4d4d4;
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+  
+  .tab span {
+    margin-left: 10px;
+    color: #ff5555;
+    cursor: pointer;
+  }
+  #content {
+    padding: 25px;
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    overflow: auto;
+    height: calc(100vh - 80px); /* Subtract top-bar (40px) + status-bar (40px) height */
+    font-family: 'Consolas', monospace;
+  }
+  #content pre {
+    margin: 0; /* Remove default margin */
+    padding: 10px; /* Optional: Add consistent padding for content readability */
+    background: transparent; /* Keep the background consistent */
+    color: inherit;
+    font-size: 14px;
+    line-height: 1.5;
+  }
